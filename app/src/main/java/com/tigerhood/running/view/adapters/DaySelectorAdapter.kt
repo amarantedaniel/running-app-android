@@ -10,7 +10,7 @@ import com.tigerhood.running.R
 import kotlinx.android.synthetic.main.view_holder_day_selector.view.*
 
 
-class DaySelectorAdapter(private var days: List<WorkoutDay> = listOf()  ) :
+class DaySelectorAdapter(private var days: List<WorkoutDay> = listOf()) :
     RecyclerView.Adapter<DaySelectorAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -19,9 +19,14 @@ class DaySelectorAdapter(private var days: List<WorkoutDay> = listOf()  ) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.view_holder_day_selector, parent, false)
+        val layout =
+            if (viewType == 0) R.layout.view_holder_day_selector_selected else R.layout.view_holder_day_selector
+        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
         return ViewHolder((view))
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
     }
 
     override fun getItemCount() = days.size
