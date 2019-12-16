@@ -1,6 +1,7 @@
 package com.tigerhood.running.view.activities
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
 
     private var presenter: HomeContract.Presenter? = null
     private val recyclerView: RecyclerView by lazy { recycler_view_day_selector }
+    private val descriptionView: TextView by lazy { description_text_view }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +42,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter =
-            DaySelectorAdapter({ itemClicked -> presenter?.onItemSelected(itemClicked) })
+            DaySelectorAdapter({ day -> presenter?.onDaySelected(day) })
 
         val dividerItemDecoration =
             DividerItemDecoration(recyclerView.context, LinearLayoutManager.HORIZONTAL)
@@ -51,7 +53,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         (recyclerView.adapter as DaySelectorAdapter).updateDays(days)
     }
 
-    override fun updateSelectedIndex(index: Int) {
-        (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(index)
+    override fun updateSelectedDay(day: WorkoutDay) {
+        (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(day)
+        descriptionView.text = day.description
     }
 }

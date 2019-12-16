@@ -23,6 +23,7 @@
             tools:text="DURATION: 35 MINS" />
 
         <TextView
+            android:id="@+id/description_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"

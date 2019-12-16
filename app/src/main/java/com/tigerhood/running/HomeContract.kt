@@ -5,13 +5,13 @@ import com.tigerhood.running.entity.WorkoutDay
 interface HomeContract {
     interface View {
         fun updateWorkoutDays(days: List<WorkoutDay>)
-        fun updateSelectedIndex(index: Int)
+        fun updateSelectedDay(day: WorkoutDay)
     }
 
     interface Presenter {
         fun onViewCreated()
         fun onDestroy()
-        fun onItemSelected(index: Int)
+        fun onDaySelected(day: WorkoutDay)
     }
 
     interface Interactor {

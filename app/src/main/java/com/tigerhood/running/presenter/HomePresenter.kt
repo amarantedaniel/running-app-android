@@ -1,6 +1,7 @@
 package com.tigerhood.running.presenter
 
 import com.tigerhood.running.HomeContract
+import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.interactor.HomeInteractor
 
 class HomePresenter(private var view: HomeContract.View?) : HomeContract.Presenter {
@@ -17,7 +18,7 @@ class HomePresenter(private var view: HomeContract.View?) : HomeContract.Present
         interactor = null
     }
 
-    override fun onItemSelected(index: Int) {
-        view?.updateSelectedIndex(index)
+    override fun onDaySelected(day: WorkoutDay) {
+        view?.updateSelectedDay(day)
     }
 }
