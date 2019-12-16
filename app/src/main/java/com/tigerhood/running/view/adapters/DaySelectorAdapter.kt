@@ -10,7 +10,7 @@ import com.tigerhood.running.R
 import kotlinx.android.synthetic.main.view_holder_day_selector.view.*
 
 
-class DaySelectorAdapter(private var days: List<WorkoutDay>) :
+class DaySelectorAdapter(private var days: List<WorkoutDay> = listOf()  ) :
     RecyclerView.Adapter<DaySelectorAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,5 +31,10 @@ class DaySelectorAdapter(private var days: List<WorkoutDay>) :
 
         holder.week?.text = "WEEK ${workoutDay.week}"
         holder.day?.text = "DAY ${workoutDay.day}"
+    }
+
+    fun updateDays(days: List<WorkoutDay>) {
+        this.days = days
+        notifyDataSetChanged()
     }
 }
