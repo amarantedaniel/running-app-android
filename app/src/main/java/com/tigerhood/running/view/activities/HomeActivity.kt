@@ -19,6 +19,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     private var presenter: HomeContract.Presenter? = null
     private val recyclerView: RecyclerView by lazy { recycler_view_day_selector }
     private val descriptionView: TextView by lazy { description_text_view }
+    private val durationView: TextView by lazy { duration_text_view }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,5 +57,6 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     override fun updateSelectedDay(day: WorkoutDay) {
         (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(day)
         descriptionView.text = day.description
+        durationView.text = day.durationDescription()
     }
 }

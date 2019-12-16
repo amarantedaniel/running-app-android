@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/duration_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
