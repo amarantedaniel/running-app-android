@@ -16,4 +16,8 @@ class HomePresenter(private var view: HomeContract.View?) : HomeContract.Present
         view = null
         interactor = null
     }
+
+    override fun onItemSelected(index: Int) {
+        view?.updateSelectedIndex(index)
+    }
 }

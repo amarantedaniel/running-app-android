@@ -39,7 +39,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     private fun setupRecyclerView() {
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.adapter = DaySelectorAdapter()
+        recyclerView.adapter =
+            DaySelectorAdapter({ itemClicked -> presenter?.onItemSelected(itemClicked) })
 
         val dividerItemDecoration =
             DividerItemDecoration(recyclerView.context, LinearLayoutManager.HORIZONTAL)
@@ -48,5 +49,9 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
 
     override fun updateWorkoutDays(days: List<WorkoutDay>) {
         (recyclerView.adapter as DaySelectorAdapter).updateDays(days)
+    }
+
+    override fun updateSelectedIndex(index: Int) {
+        (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(index)
     }
 }
