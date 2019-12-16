@@ -11,6 +11,9 @@ class HomePresenter(private var view: HomeContract.View?) : HomeContract.Present
     override fun onViewCreated() {
         val days = interactor?.loadWorkoutDays() ?: listOf()
         view?.updateWorkoutDays(days)
+        days.firstOrNull()?.let {
+            view?.updateSelectedDay(it)
+        }
     }
 
     override fun onDestroy() {
