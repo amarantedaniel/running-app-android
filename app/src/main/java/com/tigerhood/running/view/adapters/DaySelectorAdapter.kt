@@ -14,7 +14,8 @@ class DaySelectorAdapter(private var days: List<WorkoutDay>) :
     RecyclerView.Adapter<DaySelectorAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView? = itemView.view_holder_title
+        val week: TextView? = itemView.day_selector_week
+        val day: TextView? = itemView.day_selector_day
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,6 +27,9 @@ class DaySelectorAdapter(private var days: List<WorkoutDay>) :
     override fun getItemCount() = days.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.title?.text = days[position].description
+        val workoutDay = days[position]
+
+        holder.week?.text = "WEEK ${workoutDay.week}"
+        holder.day?.text = "DAY ${workoutDay.day}"
     }
 }
