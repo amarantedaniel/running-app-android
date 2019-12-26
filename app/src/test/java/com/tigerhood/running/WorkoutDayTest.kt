@@ -6,7 +6,7 @@ import junit.framework.Assert.assertEquals
 import org.junit.Test
 
 class WorkoutDayTest {
-    
+
     @Test
     fun durationDescription_shouldSumSegmentsDurationAndFormatAsMinutes() {
         val segments = listOf(WorkoutSegment(60), WorkoutSegment(60))

@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -24,6 +24,10 @@ android {
 }
 
 dependencies {
+    def navVersion = "1.0.0"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navVersion"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
