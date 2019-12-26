@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-29-node
+    steps:
+      - checkout
+      - run:
+          name: Run Tests
+          command: ./gradlew test
+
+workflows:
+  version: 2
+
+  build-and-deploy:
+    jobs:
+      - build

@@ -1,8 +1,8 @@
-package com.tigerhood.running
+package com.tigerhood.running.presenter
 
+import com.tigerhood.running.HomeContract
 import com.tigerhood.running.entity.WorkoutDay
-import com.tigerhood.running.presenter.HomePresenter
-import junit.framework.Assert.assertNull
+import junit.framework.TestCase.assertNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,8 +1,6 @@
-package com.tigerhood.running
+package com.tigerhood.running.entity
 
-import com.tigerhood.running.entity.WorkoutDay
-import com.tigerhood.running.entity.WorkoutSegment
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class WorkoutDayTest {
