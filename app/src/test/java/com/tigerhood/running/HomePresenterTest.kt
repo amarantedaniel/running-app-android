@@ -4,7 +4,6 @@ import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.presenter.HomePresenter
 import org.junit.Test
 import org.mockito.Mockito.*
-import org.mockito.internal.util.reflection.FieldSetter
 
 
 class HomePresenterTest {
@@ -15,14 +14,7 @@ class HomePresenterTest {
         val day = WorkoutDay("1", 1, 1, "Description 1", listOf())
         `when`(interactor.loadWorkoutDays()).thenReturn(listOf(day))
 
-        val presenter = HomePresenter(view)
-
-        FieldSetter.setField(
-            presenter,
-            presenter.javaClass.getDeclaredField("interactor"),
-            interactor
-        )
-
+        val presenter = HomePresenter(view, interactor)
         presenter.onViewCreated()
 
         verify(view).updateSelectedDay(day)
