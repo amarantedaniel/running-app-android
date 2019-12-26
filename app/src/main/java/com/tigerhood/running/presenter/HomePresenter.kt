@@ -5,8 +5,8 @@ import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.interactor.HomeInteractor
 
 class HomePresenter(
-    private var view: HomeContract.View?,
-    private var interactor: HomeContract.Interactor? = HomeInteractor()
+    var view: HomeContract.View?,
+    var interactor: HomeContract.Interactor? = HomeInteractor()
 ) : HomeContract.Presenter {
 
     override fun onViewCreated() {
