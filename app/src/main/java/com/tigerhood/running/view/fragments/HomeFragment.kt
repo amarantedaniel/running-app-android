@@ -12,6 +12,7 @@ import com.tigerhood.running.R
 import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.presenter.HomePresenter
 import com.tigerhood.running.view.adapters.DaySelectorAdapter
+import com.tigerhood.running.view.routers.HomeRouter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
@@ -21,11 +22,16 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        presenter = HomePresenter(this, findNavController())
+        presenter = HomePresenter(this, HomeRouter(findNavController()))
         presenter?.onViewCreated()
         startButton.setOnClickListener {
             presenter?.onStartWorkoutClicked()
         }
+    }
+
+    override fun onDestroyView() {
+        presenter?.onDestroy()
+        super.onDestroyView()
     }
 
     private fun setupRecyclerView() {

@@ -18,6 +18,9 @@ class HomePresenterTest {
     private lateinit var view: HomeContract.View
 
     @Mock
+    private lateinit var router: HomeContract.Router
+
+    @Mock
     private lateinit var interactor: HomeContract.Interactor
 
     private val day = WorkoutDay("1", 1, 1, "Description 1", listOf())
@@ -29,7 +32,7 @@ class HomePresenterTest {
 
     @Test
     fun onViewCreated_shouldCallViewFunctionsWithListOfDays() {
-        val presenter = HomePresenter(view, interactor)
+        val presenter = HomePresenter(view, router, interactor)
         presenter.onViewCreated()
 
         verify(view).updateSelectedDay(day)
@@ -38,7 +41,7 @@ class HomePresenterTest {
 
     @Test
     fun onDestroy_shouldSetBothPresenterAndViewToNull() {
-        val presenter = HomePresenter(view, interactor)
+        val presenter = HomePresenter(view, router, interactor)
         presenter.onDestroy()
         assertNull(presenter.interactor)
         assertNull(presenter.view)
@@ -46,7 +49,7 @@ class HomePresenterTest {
 
     @Test
     fun onDaySelected_shouldUpdateSelectedDayOnView() {
-        val presenter = HomePresenter(view, interactor)
+        val presenter = HomePresenter(view, router, interactor)
         presenter.onDaySelected(day)
         verify(view).updateSelectedDay(day)
     }
