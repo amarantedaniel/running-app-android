@@ -21,10 +21,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        presenter = HomePresenter(this)
+        presenter = HomePresenter(this, findNavController())
         presenter?.onViewCreated()
         startButton.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.navigateToWorkoutFragment())
+            presenter?.onStartWorkoutClicked()
         }
     }
 

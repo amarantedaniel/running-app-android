@@ -12,9 +12,14 @@ interface HomeContract {
         fun onViewCreated()
         fun onDestroy()
         fun onDaySelected(day: WorkoutDay)
+        fun onStartWorkoutClicked()
     }
 
     interface Interactor {
         fun loadWorkoutDays(): List<WorkoutDay>
+    }
+
+    interface Router {
+        fun navigateToWorkout()
     }
 }
