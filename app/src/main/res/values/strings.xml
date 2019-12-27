@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Running App</string>
     <string name="start">start</string>
+    <string name="week_number">WEEK %1$d</string>
+    <string name="day_number">DAY %1$d</string>
+    <string name="running_image_content_description">Image of Naruto running</string>
 </resources>

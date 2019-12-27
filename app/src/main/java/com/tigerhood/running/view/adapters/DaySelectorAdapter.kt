@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.tigerhood.running.entity.WorkoutDay
 import androidx.recyclerview.widget.RecyclerView
 import com.tigerhood.running.R
+import com.tigerhood.running.entity.WorkoutDay
 import kotlinx.android.synthetic.main.view_holder_day_selector.view.*
 
 
@@ -32,13 +32,12 @@ class DaySelectorAdapter(
         return if (day == selectedDay) R.layout.view_holder_day_selector_selected else R.layout.view_holder_day_selector
     }
 
-
     override fun getItemCount() = days.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val workoutDay = days[position]
-        holder.week?.text = "WEEK ${workoutDay.week}"
-        holder.day?.text = "DAY ${workoutDay.day}"
+        holder.week?.text = holder.itemView.context.getString(R.string.week_number, workoutDay.week)
+        holder.day?.text = holder.itemView.context.getString(R.string.day_number, workoutDay.day)
         holder.itemView.setOnClickListener { listener(workoutDay) }
     }
 

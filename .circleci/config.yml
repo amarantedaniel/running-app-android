@@ -7,12 +7,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run Tests
-          command: ./gradlew test
-
-workflows:
-  version: 2
-
-  build-and-deploy:
-    jobs:
-      - build
+          name: Run Tests and linter
+          command: ./gradlew lint test
