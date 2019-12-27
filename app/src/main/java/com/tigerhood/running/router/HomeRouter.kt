@@ -1,4 +1,4 @@
-package com.tigerhood.running.view.routers
+package com.tigerhood.running.router
 
 import androidx.navigation.NavController
 import com.tigerhood.running.HomeContract

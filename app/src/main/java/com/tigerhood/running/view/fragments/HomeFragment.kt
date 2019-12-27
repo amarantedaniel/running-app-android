@@ -12,7 +12,7 @@ import com.tigerhood.running.R
 import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.presenter.HomePresenter
 import com.tigerhood.running.view.adapters.DaySelectorAdapter
-import com.tigerhood.running.view.routers.HomeRouter
+import com.tigerhood.running.router.HomeRouter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
