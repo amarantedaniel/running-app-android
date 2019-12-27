@@ -7,7 +7,6 @@ data class WorkoutDay(
     val description: String,
     val segments: List<WorkoutSegment>
 ) {
-
     fun durationDescription(): String {
         val durationInSeconds = segments.sumBy { it.length }
         val duration = durationInSeconds / 60

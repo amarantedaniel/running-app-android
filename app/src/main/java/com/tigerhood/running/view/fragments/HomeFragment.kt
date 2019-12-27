@@ -4,15 +4,13 @@ package com.tigerhood.running.view.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tigerhood.running.HomeContract
 import com.tigerhood.running.R
 import com.tigerhood.running.entity.WorkoutDay
-import com.tigerhood.running.presenter.HomePresenter
+import com.tigerhood.running.factory.HomeFactory
 import com.tigerhood.running.view.adapters.DaySelectorAdapter
-import com.tigerhood.running.router.HomeRouter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
@@ -22,7 +20,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        presenter = HomePresenter(this, HomeRouter(findNavController()))
+        presenter = HomeFactory.createPresenter(this)
         presenter?.onViewCreated()
         startButton.setOnClickListener {
             presenter?.onStartWorkoutClicked()
