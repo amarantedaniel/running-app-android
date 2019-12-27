@@ -3,11 +3,10 @@ package com.tigerhood.running.view.fragments
 
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.tigerhood.running.HomeContract
 import com.tigerhood.running.R
 import com.tigerhood.running.entity.WorkoutDay
@@ -18,15 +17,15 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
 
     private var presenter: HomeContract.Presenter? = null
-    private val recyclerView: RecyclerView by lazy { recycler_view_day_selector }
-    private val descriptionView: TextView by lazy { description_text_view }
-    private val durationView: TextView by lazy { duration_text_view }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         presenter = HomePresenter(this)
         presenter?.onViewCreated()
+        startButton.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.navigateToWorkoutFragment())
+        }
     }
 
     private fun setupRecyclerView() {
@@ -43,7 +42,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
 
     override fun updateSelectedDay(day: WorkoutDay) {
         (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(day)
-        descriptionView.text = day.description
-        durationView.text = day.durationDescription()
+        descriptionTextView.text = day.description
+        durationTextView.text = day.durationDescription()
     }
 }
