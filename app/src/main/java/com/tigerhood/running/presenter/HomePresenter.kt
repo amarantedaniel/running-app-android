@@ -9,10 +9,13 @@ class HomePresenter(
     var interactor: HomeContract.Interactor?
 ) : HomeContract.Presenter {
 
+    var selectedDay: WorkoutDay? = null
+
     override fun onViewCreated() {
         val days = interactor?.loadWorkoutDays() ?: listOf()
         view?.updateWorkoutDays(days)
         days.firstOrNull()?.let {
+            selectedDay = it
             view?.updateSelectedDay(it)
         }
     }
@@ -24,10 +27,13 @@ class HomePresenter(
     }
 
     override fun onDaySelected(day: WorkoutDay) {
+        selectedDay = day
         view?.updateSelectedDay(day)
     }
 
     override fun onStartWorkoutClicked() {
-        router?.navigateToWorkout()
+        selectedDay?.let {
+            router?.navigateToWorkout(it)
+        }
     }
 }

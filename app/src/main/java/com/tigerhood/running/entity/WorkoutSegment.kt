@@ -1,3 +1,7 @@
 package com.tigerhood.running.entity
 
-data class WorkoutSegment(val length: Int)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class WorkoutSegment(val length: Int) : Parcelable

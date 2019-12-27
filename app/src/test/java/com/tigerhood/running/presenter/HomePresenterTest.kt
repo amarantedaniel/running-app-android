@@ -55,9 +55,10 @@ class HomePresenterTest {
     }
 
     @Test
-    fun onStartWorkoutClicked_shouldCallNavigateOnRouter() {
+    fun onStartWorkoutClicked_shouldCallNavigateOnRouterWithSelectedDay() {
         val presenter = HomePresenter(view, router, interactor)
+        presenter.onDaySelected(day)
         presenter.onStartWorkoutClicked()
-        verify(router).navigateToWorkout()
+        verify(router).navigateToWorkout(day)
     }
 }

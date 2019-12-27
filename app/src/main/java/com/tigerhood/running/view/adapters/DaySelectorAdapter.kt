@@ -49,7 +49,7 @@ class DaySelectorAdapter(
         notifyDataSetChanged()
     }
 
-    fun updateSelectedIndex(day: WorkoutDay) {
+    fun updateSelectedDay(day: WorkoutDay) {
         val previousIndex = selectedIndex
         val currentIndex = days.indexOf(day)
         selectedIndex = currentIndex

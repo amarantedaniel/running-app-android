@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.tigerhood.running.view.fragments.WorkoutFragment"
-        android:label="WorkoutFragment" />
+        android:label="WorkoutFragment" >
+        <argument
+            android:name="workoutDay"
+            app:argType="com.tigerhood.running.entity.WorkoutDay" />
+    </fragment>
 </navigation>

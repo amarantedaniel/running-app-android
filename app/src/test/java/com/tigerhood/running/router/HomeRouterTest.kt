@@ -1,6 +1,7 @@
 package com.tigerhood.running.router
 
 import androidx.navigation.NavController
+import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.view.fragments.HomeFragmentDirections
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -15,9 +16,10 @@ class HomeRouterTest {
 
     @Test
     fun navigateToWorkout_callsNavControllerWithCorrectDirections() {
+        val workoutDay = WorkoutDay("1", 1, 1, "", listOf())
         val router = HomeRouter(navController)
-        router.navigateToWorkout()
-        verify(navController).navigate(HomeFragmentDirections.navigateToWorkoutFragment())
+        router.navigateToWorkout(workoutDay)
+        verify(navController).navigate(HomeFragmentDirections.navigateToWorkoutFragment(workoutDay))
     }
 
 }

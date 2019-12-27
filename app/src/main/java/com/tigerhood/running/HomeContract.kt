@@ -20,6 +20,6 @@ interface HomeContract {
     }
 
     interface Router {
-        fun navigateToWorkout()
+        fun navigateToWorkout(workoutDay: WorkoutDay)
     }
 }

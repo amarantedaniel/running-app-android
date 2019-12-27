@@ -45,7 +45,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
     }
 
     override fun updateSelectedDay(day: WorkoutDay) {
-        (recyclerView.adapter as DaySelectorAdapter).updateSelectedIndex(day)
+        (recyclerView.adapter as DaySelectorAdapter).updateSelectedDay(day)
         descriptionTextView.text = day.description
         durationTextView.text = day.durationDescription()
     }
