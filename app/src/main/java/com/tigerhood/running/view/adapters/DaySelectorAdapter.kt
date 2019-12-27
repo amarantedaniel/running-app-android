@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.view_holder_day_selector.view.*
 class DaySelectorAdapter(
     private var listener: (WorkoutDay) -> Unit,
     private var days: List<WorkoutDay> = listOf(),
-    private var selectedDay: WorkoutDay? = null
+    private var selectedIndex: Int = 0
 ) :
     RecyclerView.Adapter<DaySelectorAdapter.ViewHolder>() {
 
@@ -28,8 +28,11 @@ class DaySelectorAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        val day = days[position]
-        return if (day == selectedDay) R.layout.view_holder_day_selector_selected else R.layout.view_holder_day_selector
+        return if (position == selectedIndex) {
+            R.layout.view_holder_day_selector_selected
+        } else {
+            R.layout.view_holder_day_selector
+        }
     }
 
     override fun getItemCount() = days.size
@@ -47,9 +50,9 @@ class DaySelectorAdapter(
     }
 
     fun updateSelectedIndex(day: WorkoutDay) {
-        val previousIndex = days.indexOf(selectedDay)
+        val previousIndex = selectedIndex
         val currentIndex = days.indexOf(day)
-        selectedDay = day
+        selectedIndex = currentIndex
         notifyItemChanged(previousIndex)
         notifyItemChanged(currentIndex)
     }
