@@ -10,17 +10,20 @@ import com.tigerhood.running.HomeContract
 import com.tigerhood.running.R
 import com.tigerhood.running.entity.WorkoutDay
 import com.tigerhood.running.factory.HomeFactory
+import com.tigerhood.running.factory.HomeFactoryImpl
 import com.tigerhood.running.view.adapters.DaySelectorAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
+
+    var factory: HomeFactory = HomeFactoryImpl()
 
     private var presenter: HomeContract.Presenter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        presenter = HomeFactory.createPresenter(this)
+        presenter = factory.createPresenter(this)
         presenter?.onViewCreated()
         startButton.setOnClickListener {
             presenter?.onStartWorkoutClicked()

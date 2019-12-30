@@ -9,8 +9,10 @@ import org.mockito.Mock
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
+
 @RunWith(MockitoJUnitRunner::class)
 class HomeInteractorTest {
+
     @Mock
     private lateinit var output: HomeContract.InteractorOutput
 
@@ -31,6 +33,7 @@ class HomeInteractorTest {
 
     @Test
     fun loadWorkoutDays_shouldCallOutputWithHardcodedWorkoutDays() {
+
         val interactor = HomeInteractor()
         interactor.output = output
         interactor.loadWorkoutDays()
