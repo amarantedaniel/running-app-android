@@ -16,7 +16,12 @@ interface HomeContract {
     }
 
     interface Interactor {
-        fun loadWorkoutDays(): List<WorkoutDay>
+        var output: InteractorOutput?
+        fun loadWorkoutDays()
+    }
+
+    interface InteractorOutput {
+        fun onWorkoutDaysLoaded(workoutDays: List<WorkoutDay>)
     }
 
     interface Router {

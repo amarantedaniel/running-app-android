@@ -10,6 +10,8 @@ object HomeFactory {
     fun createPresenter(view: HomeFragment): HomePresenter {
         val router = HomeRouter(view.findNavController())
         val interactor = HomeInteractor()
-        return HomePresenter(view, router, interactor)
+        return HomePresenter(view, router, interactor).apply {
+            this.interactor?.output = this
+        }
     }
 }

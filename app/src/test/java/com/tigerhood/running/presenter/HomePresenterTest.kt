@@ -3,11 +3,9 @@ package com.tigerhood.running.presenter
 import com.tigerhood.running.HomeContract
 import com.tigerhood.running.entity.WorkoutDay
 import junit.framework.TestCase.assertNull
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner
 
@@ -25,16 +23,17 @@ class HomePresenterTest {
 
     private val day = WorkoutDay("1", 1, 1, "Description 1", listOf())
 
-    @Before
-    fun init() {
-        `when`(interactor.loadWorkoutDays()).thenReturn(listOf(day))
+    @Test
+    fun onViewCreated_shouldInteractorToLoadWorkoutDays() {
+        val presenter = HomePresenter(view, router, interactor)
+        presenter.onViewCreated()
+        verify(interactor).loadWorkoutDays()
     }
 
     @Test
-    fun onViewCreated_shouldCallViewFunctionsWithListOfDays() {
+    fun onWorkoutDaysLoaded_shouldCallViewFunctionsWithListOfDays() {
         val presenter = HomePresenter(view, router, interactor)
-        presenter.onViewCreated()
-
+        presenter.onWorkoutDaysLoaded(listOf(day))
         verify(view).updateSelectedDay(day)
         verify(view).updateWorkoutDays(listOf(day))
     }
