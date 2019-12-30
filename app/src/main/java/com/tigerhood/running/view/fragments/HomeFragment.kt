@@ -17,8 +17,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
 
     var factory: HomeFactory = HomeFactoryImpl()
-
-    private var presenter: HomeContract.Presenter? = null
+    override var presenter: HomeContract.Presenter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

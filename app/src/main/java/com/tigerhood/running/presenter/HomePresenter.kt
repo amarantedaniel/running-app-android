@@ -4,12 +4,12 @@ import com.tigerhood.running.HomeContract
 import com.tigerhood.running.entity.WorkoutDay
 
 class HomePresenter(
-    var view: HomeContract.View?,
-    var router: HomeContract.Router?,
-    var interactor: HomeContract.Interactor?
+    override var view: HomeContract.View?,
+    override var router: HomeContract.Router?,
+    override var interactor: HomeContract.Interactor?
 ) : HomeContract.Presenter, HomeContract.InteractorOutput {
 
-    var selectedDay: WorkoutDay? = null
+    private var selectedDay: WorkoutDay? = null
 
     override fun onViewCreated() {
         interactor?.loadWorkoutDays()

@@ -8,4 +8,4 @@ jobs:
       - checkout
       - run:
           name: Run Tests and linter
-          command: ./gradlew lint test
+          command: ./gradlew lint test connectedAndroidTest
