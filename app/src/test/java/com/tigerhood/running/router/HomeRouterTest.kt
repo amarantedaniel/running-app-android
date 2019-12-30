@@ -19,6 +19,7 @@ class HomeRouterTest {
         val workoutDay = WorkoutDay("1", 1, 1, "", listOf())
         val router = HomeRouter(navController)
         router.navigateToWorkout(workoutDay)
+
         verify(navController).navigate(HomeFragmentDirections.navigateToWorkoutFragment(workoutDay))
     }
 

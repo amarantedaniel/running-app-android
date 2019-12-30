@@ -36,7 +36,9 @@ class HomeFragmentTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
+
         `when`(factory.createPresenter(any())).thenReturn(presenter)
+
 
         scenario = launchFragmentInContainer {
             HomeFragment().apply {

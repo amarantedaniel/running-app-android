@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:background="@color/black"
         android:text="@string/start"
-        android:textColor="@color/colorPrimaryLight"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/recyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView

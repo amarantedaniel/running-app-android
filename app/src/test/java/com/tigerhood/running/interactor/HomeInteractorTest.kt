@@ -34,7 +34,6 @@ class HomeInteractorTest {
 
     @Test
     fun loadWorkoutDays_shouldCallOutputWithHardcodedWorkoutDays() {
-
         val interactor = HomeInteractor(repository)
         interactor.output = output
         interactor.loadWorkoutDays()
