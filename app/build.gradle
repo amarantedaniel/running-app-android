@@ -32,6 +32,8 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment-ktx:$navVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$navVersion"
 
+    implementation "com.google.code.gson:gson:2.8.5"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
