@@ -3,21 +3,147 @@
     "id": "7721d555-802b-45f2-9a81-75d35d6d4726",
     "week": 1,
     "day": 1,
-    "description": "",
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
     "segments": []
   },
   {
     "id": "2cb0124f-cfa3-4cb8-830d-eea289d2f98c",
     "week": 1,
     "day": 2,
-    "description": "",
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
     "segments": []
   },
   {
-    "id": "2cb0124f-cfa3-4cb8-830d-eea289d2f98c",
+    "id": "83702a54-ca60-4cd2-91b1-a9ed1611da8d",
     "week": 1,
     "day": 3,
-    "description": "",
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "d21a609a-c2ae-4640-8ee8-ed7e1486fd7c",
+    "week": 2,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "cc8ea882-79fa-47f6-b80f-0801ef32422b",
+    "week": 2,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "5ceab446-2e8a-4354-8b86-80dda3f0fffb",
+    "week": 2,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "2d56846c-21c0-4a32-856b-6f964615e05c",
+    "week": 3,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins",
+    "segments": []
+  },
+  {
+    "id": "45a18478-6387-4fa6-8a14-09368ea34a3f",
+    "week": 3,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins",
+    "segments": []
+  },
+  {
+    "id": "a995b04d-6d0a-435f-8630-a7e1f2afffd4",
+    "week": 3,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins",
+    "segments": []
+  },
+  {
+    "id": "a0e4d1eb-20b0-4cc8-8a23-a90562713221",
+    "week": 4,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "fc757625-bfaa-4977-a7e8-368f78e54e3f",
+    "week": 4,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "3550742f-d126-4b22-aa34-1e1ad3fae52a",
+    "week": 4,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "bcb767d6-b017-4e70-8a2b-b9fbf5a1f002",
+    "week": 5,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "262a0040-d706-43f6-ba50-74ec08da8654",
+    "week": 5,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "3020342f-87b5-43a8-95f9-30cf98cb000e",
+    "week": 5,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "9620b227-952d-4f0f-8bac-1773f961dced",
+    "week": 6,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "27da8be1-7e13-45dd-8a49-fca018c38b36",
+    "week": 6,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "fcb4a03e-2a37-4e9d-9ab5-d3c0c197d16b",
+    "week": 6,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "7c2eb018-c504-4b46-9e5e-c5da0beec20e",
+    "week": 7,
+    "day": 1,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "fcec765e-33cd-43b1-abaf-479e1cf638a7",
+    "week": 7,
+    "day": 2,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
+    "segments": []
+  },
+  {
+    "id": "fd5951e2-1287-46bf-8bdc-c5bcb175801c",
+    "week": 7,
+    "day": 3,
+    "description": "Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes",
     "segments": []
   }
 ]
