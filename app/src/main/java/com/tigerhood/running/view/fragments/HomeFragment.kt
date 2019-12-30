@@ -13,6 +13,7 @@ import com.tigerhood.running.factory.HomeFactory
 import com.tigerhood.running.factory.HomeFactoryImpl
 import com.tigerhood.running.view.adapters.DaySelectorAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.layout_workout_description.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
 

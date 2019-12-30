@@ -25,7 +25,8 @@ class WorkoutFragmentTest {
 
     @Test
     fun textIsLoadedOnScreen() {
-        onView(withId(R.id.textView)).check(matches(withText(day.description)))
+        onView(withId(R.id.descriptionTextView)).check(matches(withText(day.description)))
+        onView(withId(R.id.durationTextView)).check(matches(withText("DURATION: 0 MINUTES")))
     }
 
 }

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.tigerhood.running.R
 import com.tigerhood.running.WorkoutContract
-import kotlinx.android.synthetic.main.fragment_workout.*
+import kotlinx.android.synthetic.main.layout_workout_description.*
 
 class WorkoutFragment : Fragment(R.layout.fragment_workout), WorkoutContract.View {
 
@@ -14,6 +14,7 @@ class WorkoutFragment : Fragment(R.layout.fragment_workout), WorkoutContract.Vie
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textView.text = args.workoutDay.description
+        descriptionTextView.text = args.workoutDay.description
+        durationTextView.text = args.workoutDay.durationDescription()
     }
 }
