@@ -16,26 +16,36 @@ import com.tigerhood.running.factory.HomeFactory
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito.*
+import org.mockito.Mock
+import org.mockito.Mockito
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
+import org.mockito.MockitoAnnotations
 
 @RunWith(AndroidJUnit4::class)
 class HomeFragmentTest {
 
+    @Mock
+    private lateinit var presenter: HomeContract.Presenter
+    @Mock
+    private lateinit var factory: HomeFactory
+
     private lateinit var scenario: FragmentScenario<HomeFragment>
-    private val presenter = mock(HomeContract.Presenter::class.java)
     private val day = WorkoutDay("1", 1, 1, "Description 1", listOf())
 
     @Before
     fun setUp() {
-        val factory = mock(HomeFactory::class.java)
+        MockitoAnnotations.initMocks(this)
+        `when`(factory.createPresenter(any())).thenReturn(presenter)
 
         scenario = launchFragmentInContainer {
             HomeFragment().apply {
-                `when`(factory.createPresenter(this)).thenReturn(presenter)
-                this.factory = factory
+                this.factory = this@HomeFragmentTest.factory
             }
         }
     }
+
+    private fun <T> any(): T = Mockito.any<T>()
 
     @Test
     fun onCreation_shouldCallPresenterOnViewCreated() {
