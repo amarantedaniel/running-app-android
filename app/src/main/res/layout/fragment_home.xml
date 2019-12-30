@@ -43,9 +43,9 @@
         android:id="@+id/startButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/black"
+        android:background="@color/black"
         android:text="@string/start"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toTopOf="@id/recyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView

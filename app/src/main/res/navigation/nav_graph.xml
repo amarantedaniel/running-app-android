@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.tigerhood.running.view.fragments.HomeFragment"
-        android:label="HomeFragment">
+        android:label="Run like the wind">
         <action
             android:id="@+id/navigateToWorkoutFragment"
             app:destination="@id/workoutFragment" />
@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.tigerhood.running.view.fragments.WorkoutFragment"
-        android:label="WorkoutFragment" >
+        android:label="Workout">
         <argument
             android:name="workoutDay"
             app:argType="com.tigerhood.running.entity.WorkoutDay" />
