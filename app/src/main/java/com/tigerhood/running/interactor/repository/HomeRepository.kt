@@ -7,8 +7,8 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.tigerhood.running.entity.WorkoutDay
 
-class HomeRepository(private val context: Context?) {
-    fun getWorkoutDays(): List<WorkoutDay> {
+class HomeRepositoryImpl(private val context: Context?) : HomeRepository {
+    override fun getWorkoutDays(): List<WorkoutDay> {
         context?.assets?.open("workout_days.json").use { inputStream ->
             JsonReader(inputStream?.reader()).use { jsonReader ->
                 val type = object : TypeToken<List<WorkoutDay>>() {}.type
@@ -16,4 +16,8 @@ class HomeRepository(private val context: Context?) {
             }
         }
     }
+}
+
+interface HomeRepository {
+    fun getWorkoutDays(): List<WorkoutDay>
 }

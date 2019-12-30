@@ -1,8 +1,22 @@
 [
   {
-    "id": "",
-    "week": 0,
-    "day": 0,
+    "id": "7721d555-802b-45f2-9a81-75d35d6d4726",
+    "week": 1,
+    "day": 1,
+    "description": "",
+    "segments": []
+  },
+  {
+    "id": "2cb0124f-cfa3-4cb8-830d-eea289d2f98c",
+    "week": 1,
+    "day": 2,
+    "description": "",
+    "segments": []
+  },
+  {
+    "id": "2cb0124f-cfa3-4cb8-830d-eea289d2f98c",
+    "week": 1,
+    "day": 3,
     "description": "",
     "segments": []
   }
