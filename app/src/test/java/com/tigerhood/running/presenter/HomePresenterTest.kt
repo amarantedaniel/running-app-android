@@ -24,7 +24,7 @@ class HomePresenterTest {
     private val day = WorkoutDay("1", 1, 1, "Description 1", listOf())
 
     @Test
-    fun onViewCreated_shouldInteractorToLoadWorkoutDays() {
+    fun onViewCreated_shouldCallInteractorToLoadWorkoutDays() {
         val presenter = HomePresenter(view, router, interactor)
         presenter.onViewCreated()
         verify(interactor).loadWorkoutDays()
@@ -39,11 +39,12 @@ class HomePresenterTest {
     }
 
     @Test
-    fun onDestroy_shouldSetBothPresenterAndViewToNull() {
+    fun onDestroy_shouldSetPresenterViewAndRouterToNull() {
         val presenter = HomePresenter(view, router, interactor)
         presenter.onDestroy()
         assertNull(presenter.interactor)
         assertNull(presenter.view)
+        assertNull(presenter.router)
     }
 
     @Test
